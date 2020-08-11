@@ -1,0 +1,35 @@
+157.245.248.79
+https://comoinstalar.me/como-instalar-mariadb-en-centos-7/
+mysql -u root -p  ---pass= 1096-Anderson
+
+pm2
+//ubuntu
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+
+– Add ErrorDocument 404 /index.html
+
+– Full file:
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
+    
+    # redirect 404 to index page
+    ErrorDocument 404 /index.html
+    
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+////centos
+
+sudo nano /etc/httpd/conf.d/example.com.conf
+
+<VirtualHost *:80>
+ServerName example.com
+ErrorDocument 404 /my-404.html
+    <Directory "/var/www/example.com/html">
+    AllowOverride All
+    </Directory>
+</VirtualHost>
+
+sudo systemctl restart httpd
