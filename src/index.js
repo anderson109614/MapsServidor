@@ -42,10 +42,10 @@ io.on('connection', (socket) => {
     console.log(datos);
     socket.broadcast.emit('Ubicacion:' + datos.Id, datos);
     socket.broadcast.emit('Ubicacion', datos);
-    if(datos.guardar){
+    if (datos.guardar) {
       GuardarPunto(datos);
     }
-    
+
   });
 
 
@@ -60,9 +60,9 @@ function GuardarPunto(data) {
     VALUES(?,?, ?,NOW());
 `;
 
-     
 
-mysqlConnection2.query(query, [data.Id,data.Lat,data.lon], (err, rows, fields) => {
+
+  mysqlConnection2.query(query, [data.Id, data.Lat, data.lon], (err, rows, fields) => {
     if (!err) {
       console.log('punto guardado');
     } else {

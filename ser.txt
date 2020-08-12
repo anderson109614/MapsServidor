@@ -1,6 +1,13 @@
 157.245.248.79
+
+scp -r MapsLogistica root@157.245.248.79:/root/proyectos
+
+
 https://comoinstalar.me/como-instalar-mariadb-en-centos-7/
-mysql -u root -p  ---pass= 1096-Anderson
+mysql -u root -p  
+---pass= 1096-Anderson
+
+mysql -u root db_mapsseguridad < test.sql
 
 pm2
 //ubuntu

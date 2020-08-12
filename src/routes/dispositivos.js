@@ -2,6 +2,28 @@ const express = require('express');
 const router = express.Router();
 
 const mysqlConnection  = require('../database.js');
+////Auth
+router.post('/auth', (req, res) => {
+ 
+ /// console.log( req.body);
+  const {cedula,contrasena} = req.body;
+//console.log(id, name, salary);
+const query = `Select * from Usuario WHERE Cedula=? and Contrasena=?;
+`;
+
+
+mysqlConnection.query(query, [cedula,contrasena], (err, rows, fields) => {
+  if(!err) {
+    
+    res.json(rows);
+  } else {
+    console.log(err);
+  }
+});
+
+
+
+});
 
 // GET all dispositivos
 router.get('/dispositivos', (req, res) => {
