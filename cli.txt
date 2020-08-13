@@ -2,3 +2,16 @@ npm init --yes
 npm install express mysql
 npm i socket.io
 npm i nodemon -D
+
+SELECT
+  Latitud,
+  Longitud
+FROM
+  posiciones
+WHERE
+  Id_Dis =9 AND 
+Fecha  BETWEEN DATE_FORMAT("2020-08-05","%Y-%m-%d 00:00:00")
+ AND  DATE_FORMAT("2020-08-05","%Y-%m-%d 23:59:59");
+
+
+INSERT INTO `posiciones` (`Id_Dis`, `Latitud`, `Longitud`, `Fecha`) VALUES ('9', '-1.3304075', '-78.523326', '2020-08-05 10:17:00');
