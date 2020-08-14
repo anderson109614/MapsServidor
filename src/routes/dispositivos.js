@@ -8,7 +8,7 @@ router.post('/auth', (req, res) => {
  /// console.log( req.body);
   const {cedula,contrasena} = req.body;
 //console.log(id, name, salary);
-const query = `Select * from Usuario WHERE Cedula=? and Contrasena=?;
+const query = `Select * from usuario WHERE Cedula=? and Contrasena=?;
 `;
 
 

@@ -56,13 +56,14 @@ function GuardarPunto(data) {
     Id_Dis, 
     Latitud, 
     Longitud, 
+    exactitud,
     Fecha) 
-    VALUES(?,?, ?,NOW());
+    VALUES(?,?,?, ?,NOW());
 `;
 
 
 
-  mysqlConnection2.query(query, [data.Id, data.Lat, data.lon], (err, rows, fields) => {
+  mysqlConnection2.query(query, [data.Id, data.Lat, data.lon,data.exa], (err, rows, fields) => {
     if (!err) {
       console.log('punto guardado');
     } else {
