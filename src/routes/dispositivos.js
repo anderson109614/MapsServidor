@@ -47,6 +47,17 @@ router.get('/dispositivos/:id', (req, res) => {
     }
   });
 });
+// GET An dispositivos id
+router.get('/puntos/:id', (req, res) => {
+  const { id } = req.params; 
+  mysqlConnection.query('SELECT * FROM posiciones WHERE Id_Dis = ?', [id], (err, rows, fields) => {
+    if (!err) {
+      res.json(rows[0]);
+    } else {
+      console.log(err);
+    }
+  });
+});
 
 // GET An ruta dispositivos id,fecha
 router.get('/ruta/:id&:fecha', (req, res) => {
